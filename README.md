@@ -11,3 +11,7 @@ A simple web scraper written in Go that extracts links, paragraph text, and imag
    ```bash
    git clone https://github.com/your-username/webscraper.git
    cd webscraper
+   
+# Optionally specify an output file:
+```bash
+   go run main.go -url "https://example.com" -output "mydata.txt"

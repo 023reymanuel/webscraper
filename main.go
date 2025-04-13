@@ -97,6 +97,7 @@ func saveToFile(data ScrapeData, filename string) error {
 func main() {
 	// Parse URL flag
 	url := flag.String("url", "", "URL to scrape (e.g., https://example.com)")
+	output := flag.String("output", "output.txt", "File to save scraped data (if saved)")
 	flag.Parse()
 
 	if *url == "" {
@@ -132,11 +133,10 @@ func main() {
 	response = strings.TrimSpace(strings.ToLower(response))
 
 	if response == "y" {
-		filename := "output.txt"
-		if err := saveToFile(data, filename); err != nil {
+		if err := saveToFile(data, *output); err != nil {
 			log.Printf("Error saving to file: %v", err)
 		} else {
-			fmt.Printf("Data saved to %s\n", filename)
+			fmt.Printf("Data saved to %s\n", *output)
 		}
 	}
 }

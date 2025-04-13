@@ -1,0 +1,14 @@
+# Binaries
+gop
+webscraper
+*.exe
+
+# Go build artifacts
+*.o
+*.a
+
+# Temporary files
+output.txt
+
+# IDE files
+.idea/
